@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+
+ <!--container-->
+ <header class="header">
+  <div class="container-fluid p-0 m-0 d-flex justify-content-center" style="height: 400px">
+    <div class="row slider m-0">
+        <ul class="p-0">
+          <li>
+            <div class="leftButton"></div>
+            <img src="{% static "img/Картинка1.jpg"%}" class="image showImage" id="Slide1">
+          </li>
+          <li>
+            <div class="rightButton"></div>
+            <img src="{% static "img/Картинка2.jpg"%}" class="image" id="Slide2">
+          </li>
+          <li> 
+            <img src="{% static "img/Картинка3.jpg"%}" class="image" id="Slide3">
+          </li>
+          <li> 
+            <img src="{% static "img/Картинка4.jpg"%}" class="image" id="Slide4">
+          </li>
+          
+        </ul>
+
+         
+
+      </div>
+  </div> 
+  
+  <div class="container">
+    <ul class="sliderBlockList m-0 p-0">
+      <li class="mr-2"><div class="showBlock sliderBlock"></div></li><li class="mr-2"><div class="sliderBlock"></div></li><li class="mr-2"><div class="sliderBlock"></div></li><li ><div class="sliderBlock"></div></li>
+    </ul>
+  </div>
+</header>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

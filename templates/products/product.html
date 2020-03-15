@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                {% for image in product.productimage_set.all %}
+                <img src="{{image.image.url}}" alt="" class="img-fluid w-50">
+                {% endfor %}
+            </div>
+            <div class="col-md-7">
+                <h3 class="mb-3">{{ product.name }}</h3>
+                <h4 class="mb-3">Тип духов: {{ product.type }}</h4>
+                <h5 class="mb-3">Стоимость: {{ product.cost }}</h5>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Описание</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Состав</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Отзывы</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{{product.description}}</div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Тут должен быть отзыв</div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">А здесь что-нибудь по составу</div>
+                </div>
+                <div>
+                    <form id="formOfBuy" action="{% url 'basket_adding' %}"> {% csrf_token %}
+                        <button type="submit" class="btn btn-success btn-for-product">Купить</button>
+                        <select name="number" id="number" data-product-name="{{ product.name }}"
+                            data-product-cost="{{ product.cost }}"
+                                data-product-id="{{ product_id }}"
+                                {% for image in product.productimage_set.all %}
+                                data-product-image="{{image.image.url }}"
+                                {% endfor %}
+                        >
+                            <option label="1" value="1" selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

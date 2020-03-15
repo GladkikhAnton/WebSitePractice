@@ -1,0 +1,139 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light mt-2 mb-0 pb-0">
+        <div class="d-flex justify-content-start">
+          <a class="navbar-brand" href="/">Магазин элитной</a>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 shire" type="search" placeholder="Что ищите" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">
+              Search
+            </button>
+           </form>
+        </div>
+        <div class="navbar-nav ml-auto">
+                <img src="{% static 'img/иконкаЛупа.jpeg'%} " class="navbar-toggler-icon">
+                <img src="{% static 'img/иконкаЧел.jpeg'%}" class="navbar-toggler-icon ml-4">
+                <img src="{% static 'img/иконкаКорзина.jpeg' %}" class="navbar-toggler-icon ml-4">
+                    <div class="navbar-nav nav-item ml-4 basket"><a href="{% url 'basket' %}" >
+                      Корзина
+                        </a>
+                        <div class="basket-container" style="height: {{total_height}}; max-height: {{total_height}};">
+                            <div class="basket-items">
+                                {% for item in products_in_basket %}
+
+                                    <a href="{% url 'product' item.product.id %}"><div class="container-fluid deleted">
+                                        <div class="row basketH">
+                                            <div class="col-md-5 h-100">
+                                                {% for image in item.product.productimage_set.all %}
+                                                    <img class="basketImage" src="{{image.image.url}}">
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-md-7 p-0">
+                                                <div>{{item.product.name}}</div>
+                                                <ul class="test p-0 mb-0">
+                                                    <li>{{item.nmb}} шт.</li><li class="ml-5">{{item.total_price}}р</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </a>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+                        </div>
+
+        </div>
+    </nav> <!-- navbar navbar-expand-lg -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-0 pb-0 pt-0 justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item mr-3 poster">
+            <div class = "descr pt-0">
+              <div class= "container">
+                  <ul class="category-list">
+                       {% for type in typeOfProduct %}
+
+                          <li class="mt-3 mb-3">{{type.name}}</li>
+
+                          {% endfor %}
+                        </ul>
+
+
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+            <a class="nav-link" href="#">Парфюмерия</a>
+          </li>
+          <li class="nav-item mr-3 ml-3 poster">
+            <div class = "descr">
+              <div class= "container">
+                <div class="row">
+
+                  <div class="col-md-3">
+
+                  </div>
+
+                </div>
+                <div class="row">
+                </div>
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+            <a class="nav-link" href="#">Акции</a>
+          </li>
+          <li class="nav-item mr-3 ml-3 poster">
+            <div class = "descr">
+              <div class= "container">
+
+                <div class="row">
+                </div>
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+            <a class="nav-link" href="#">ololo</a>
+          </li>
+          <li class="nav-item mr-3 ml-3 poster">
+            <div class = "descr">
+              <div class= "container">
+
+                <div class="row">
+                </div>
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item mr-3 ml-3 poster">
+            <div class = "descr">
+              <div class= "container">
+
+                <div class="row">
+                </div>
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+            <a class="nav-link" href="#">Доставка</a>
+          </li>
+          <li class="nav-item ml-3 poster">
+            <div class = "descr">
+              <div class= "container">
+
+                <div class="row">
+                  <div class="col-md-3">
+                    <ul>
+                      <li class="mt-3 mb-3">Link</li>
+                      <li class="mt-3 mb-3">Link</li>
+                      <li class="mt-3 mb-3">Link</li>
+                      <li class="mt-3 mb-3">Link</li>
+                      <li class="mt-3 mb-3">Link</li>
+                      <li class="mt-3 mb-3">Link</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div> <!--container -->
+            </div>  <!--descr-->
+          </li>
+        </ul>
+    </nav> <!-- navbar n-->

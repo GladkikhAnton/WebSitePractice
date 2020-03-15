@@ -1,0 +1,232 @@
+/* navbar */
+.form-inline .shire {
+    text-align: left;
+    background-repeat: no-repeat;
+    width: calc(100vw - 550px);
+}
+h3{
+    font-size: 16pt;
+}
+h6{
+    font-size: 10pt;
+    font-weight: normal;
+}
+/* конец navbar */
+
+/* выпадающее меню навбара */
+.descr{
+
+    background-color: red;
+    display:none;
+    margin-left:-350px;
+    padding:10px;
+    margin-top:17px;
+    background: #f3f3f3;
+    height: 200px;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+
+}
+.poster:hover .descr{
+            transition: all 1s ease-out;
+     display:block;
+    position:absolute;
+    z-index:9999;
+    right:0px;
+    top: 20px;
+    width:100%;
+    height: 300px;
+}
+.category-list {
+  list-style: none;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 -30px;
+}
+.category-list li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: 0 30px;
+}
+ul {
+    list-style-type: none;
+}
+/*конец выпадающего меню навбара */
+/* корзина */
+.basketH {
+    max-height: 100px;
+}
+.basketImage {
+    max-height: 100px;
+}
+.basket {
+    position: relative;
+    height: 38px;
+}
+.basket-container .basketImage{
+    height:100%;
+}
+.basket-container {
+    position: absolute;
+    display: none;
+    top: 38px;
+    height: 0px;
+    right: -9px;
+    width: 20vw;
+    background-color: #ffffff;
+    /*rgba(126, 126, 126, 0.55)*/
+    max-height: 100px;
+    z-index: 5;
+}
+.basket-items {
+    height: 100%;
+}
+.basket:hover .basket-container, .basket:focus .basket-container,
+.basket-container:focus, .basket-container:hover {
+    transition: 1s;
+    display: block;
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+}
+
+.test li {
+    display: inline;
+    margin: auto;
+}
+/*Конец корзины */
+/* слайдер */
+.slider {
+    position:relative;
+    overflow: hidden;
+    height: 400px;
+    width: 40vw;
+ 
+}
+.sliderBlock {
+    cursor: pointer;
+    opacity: .6;
+    width:100px;
+    height:3px;
+    background-color: gray;
+    display: inline-block;
+}
+.showBlock {
+    opacity: 1 !important;
+}
+.image {
+    left: 40vw;
+    position: absolute;
+    width: 40vw;
+    height: 400px;    
+}
+.showImage{
+    left:0;
+    z-index: 3;
+}
+.sliderBlockList {
+    text-align: center;
+
+}
+.sliderBlockList li {
+    display: inline; /* Отображать как строчный элемент */
+}
+
+.leftButton, .rightButton{
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0 0 rgba(0,0,0, 0.5);
+    top: 200px;
+    z-index: 500;
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+}
+.rightButton{
+    background: url(../img/rightbutton.jpg);
+    background-size: contain;
+    right:1vw;
+}
+.leftButton:hover, .rightButton:hover {
+    opacity: .6;
+}
+.leftButton:active, .rightButton:active {
+    opacity: .3;
+}
+.leftButton {
+    background: url(../img/leftbutton.jpg);
+    background-size: contain;
+    left: 1vw;
+}
+/*Конец Слайдера */
+/* секция карточек */
+.cardforproduct:hover, .cardforproduct:focus {
+    box-shadow: 0 0 3px #5a6268;
+}
+.cardforproduct {
+    border: none;
+}
+.cardforproduct h1{
+    font-size: 14pt;
+}
+.cardforproduct .card-text{
+    font-size: 10pt;
+}
+.cardforproduct h2{
+    font-size: 12pt;
+}
+.btn-for-product {
+    position: absolute;
+    bottom: 10px;
+    left:74px;
+}
+/* конец секции карточек */
+
+/*Секция подвала*/
+
+.myFooter {
+    font-size: 10pt;
+}
+.myFooter ul li:first-child {
+    color:violet;
+}
+.myFooter ul li h4 {
+    font-size: 14pt;
+    display: inline;
+}
+.myFooter ul li h6 {
+    font-size: 10pt;
+    display: inline;
+    font-weight: normal;
+}
+/*Конец секции подвала*/
+.blaack{
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

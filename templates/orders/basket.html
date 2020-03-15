@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid mt-5">
+        <h3 class="text-center">Корзина</h3>
+        {% for item in products_in_basket %}
+            <div class="container-fluid" id="x_{{ item.id }}"
+                    style="border-bottom: 1px solid gray; border-top: 1px solid gray; height:150px;">
+
+                <div class="row h-100">
+                    <div class="col-md-1">
+                            {% for image in item.product.productimage_set.all %}
+                                <img src="{{ image.image.url }}" style="height: 65%">
+                            {% endfor %}
+                    </div>
+                    <div class="col-md-5 text-center">
+                        {{ item.product.name }}
+                    </div>
+                    <div class="col-md-1">
+                        {{ item.price_per_item }}
+                    </div>
+                    <div class="col-md-2">
+                        <form class="formOfChange" action="{% url 'changing_nmb_basket' %}"
+                            data-product-id="{{ item.product.id }}"
+                                    data-product-nmb="{{ item.nmb }}"> {% csrf_token %}
+                            <button type="submit" class="less change">-</button>
+                            <div class="numberOfProductInBasket" style="display: inline">{{ item.nmb }} шт.</div>
+                            <button type="submit" class="more change">+</button>
+                        </form>
+                    </div>
+                    <div class="col-md-1 totalCostOfProductInBasket">
+                        {{ item.total_price }}
+                    </div>
+                    <div class="col-md-2">
+                        <form class="formOfDelete" id="x-_{{ item }}" data-product-id="{{ item.id }}"
+                              action="{% url 'deleting_product' %}"> {% csrf_token %}
+                            <a type="" class="deleteProductInBasket" href="">Удалить</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
